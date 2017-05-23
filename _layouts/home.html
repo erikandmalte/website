@@ -1,0 +1,74 @@
+---
+layout: default
+---
+
+{% if page.hero %}
+<div class="block-hero">
+  <div class="wrapper">
+      <p class="hero-text">{{ page.hero.text }}</p>
+      <img src="assets/images/{{ page.hero.image.file }}" alt="{{ page.hero.image.alt }}" class="hero-image">
+      <a href="mailto:{{ page.email }}" class="button">Tell us about your project</a>
+      <p class="hero-caption">Open for work, June 2017</p>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+
+{% if page.about %}
+<div class="block-about">
+  <div class="wrapper">
+    <div class="col-wrapper">
+    {% for item in page.about %}
+      <div class="col col-2">
+        <h2>{{ item.name }}<br /><span>{{ item.job }}</span></h2>
+        <img src="assets/images/{{ item.image }}">
+        <p>{{ item.text }}</p>
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}
+
+
+{% if page.process %}
+<div class="block-process">
+  <div class="wrapper">
+    <div class="col-wrapper">
+      <div class="col col-2">
+        <h1>{{ page.process.title }}<br /><span>{{ page.process.subtitle }}</span></h1>
+      </div>
+      <div class="col col-2">
+        <ol>
+        {% for item in page.process.steps %}
+          <li>{{ item }}</li>
+        {% endfor %}
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+
+<div class="home">
+  
+  {{ content }}
+<!--
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+-->
+</div>
