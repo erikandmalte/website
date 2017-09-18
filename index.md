@@ -1,6 +1,6 @@
 ---
 layout: home
-hero:
+hero2:
   text: "We're a duo team that can help you make a digital product from scratch. Ok adipiscing elit. Praesent commodo varius massa, quis rhoncus enim viverra vel."
   image: 
     file: hero_wineinblack.png
